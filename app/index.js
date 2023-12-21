@@ -1,20 +1,22 @@
 import { View, Text, Button } from 'react-native';
-import React from 'react-native'; 
+import { Link, useRouter } from 'expo-router';
+import React from 'react-native';
 import About from './pages/About';
 
 const Home = () => {
 
-    const alert =() => {
+    const alert = () => {
         console.log("works");
     }
 
+    const router = useRouter();
 
     return (
 
         <View>
-        <Text>hello world</Text>
-        <Button title="Click Me" onPress={alert}>Click me</Button>
-        {/* <About></About> */}
+            <Text>Home</Text>
+            {/*<Button title="Calender" onPress={() => router.push('/calender')}></Button>
+            <About></About> */}
         </View>
 
     );

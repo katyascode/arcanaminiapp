@@ -5,11 +5,9 @@ const Home = () => {
     return (
 
         <View>
-        <Text>hello world</Text>
-        <Button title = "Click Me">Click me</Button>
+            <Text>hello world</Text>
+            <Button title="Click Me">Click me</Button>
         </View>
 
     );
 }
-
-export default Home;
