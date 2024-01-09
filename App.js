@@ -13,9 +13,20 @@ export default function App() {
     const BottomTab = createBottomTabNavigator();
     return (
         <NavigationContainer>
-        <BottomTab.Navigator>
+        <BottomTab.Navigator initialRouteName='Home'>
+            <BottomTab.Screen name="Home" component={Home} options={
+                {
+                    title: "Home",
+                    headerTitleAlign: "center",
+                    tabBarIcon: () => (
+                        <Ionicons name="home" />
+                    ),
+
+
+                }
+
+            }/>
             <BottomTab.Screen name="Calendar" component={Calendar}/>
-            <BottomTab.Screen name="Home" component={Home}/>
             <BottomTab.Screen name="Librarium" component={Librarium}/>
         </BottomTab.Navigator>
         </NavigationContainer>
