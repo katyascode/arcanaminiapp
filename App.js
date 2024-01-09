@@ -19,15 +19,28 @@ export default function App() {
                     title: "Home",
                     headerTitleAlign: "center",
                     tabBarIcon: () => (
-                        <Ionicons name="home" />
+                        <Ionicons name="home" size={24} color={"purple"}/>
                     ),
-
-
                 }
-
             }/>
-            <BottomTab.Screen name="Calendar" component={Calendar}/>
-            <BottomTab.Screen name="Librarium" component={Librarium}/>
+            <BottomTab.Screen name="Calendar" component={Calendar} options={
+                {
+                    title: "Calendar",
+                    headerTitleAlign: "center",
+                    tabBarIcon: () => (
+                        <Ionicons name="calendar" size={24} color={"purple"}/>
+                    ),
+                }
+            }/>
+            <BottomTab.Screen name="Librarium" component={Librarium} options={
+                {
+                    title: "Librarium",
+                    headerTitleAlign: "center",
+                    tabBarIcon: () => (
+                        <Ionicons name="book" size={24} color={"purple"}/>
+                    ),
+                }
+            }/>
         </BottomTab.Navigator>
         </NavigationContainer>
 
