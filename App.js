@@ -11,7 +11,8 @@ import Librarium from './screens/Librarium';
 
 export default function App() {
     const BottomTab = createBottomTabNavigator();
-    return (
+    return (<>
+        <StatusBar style='dark'/>
         <NavigationContainer>
         <BottomTab.Navigator initialRouteName='Home'>
             <BottomTab.Screen name="Home" component={Home} options={
@@ -43,7 +44,7 @@ export default function App() {
             }/>
         </BottomTab.Navigator>
         </NavigationContainer>
-
+        </>
     );
 }
 
