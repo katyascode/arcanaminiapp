@@ -51,12 +51,41 @@ function BottomTabNavigator(){
 function DrawerNavigation(){
     return(
         <Drawer.Navigator>
-            <Drawer.Screen  component={BottomTabNavigator} name="Home" options={{
-                headerShown: false
+            <Drawer.Screen  component={BottomTabNavigator} name="Drawer" options={{
+                drawerLabel: 'Home',
+                headerShown: false,
+                drawerIcon: () => (
+                    <Ionicons name="home" size={24} color={"purple"}/>
+                ),
             }}/>
-            <Drawer.Screen  component={Profile} name="My Profile"  />
-            <Drawer.Screen  component={Register} name="Register"  />
-            <Drawer.Screen  component={Login} name="Login"  />
+            <Drawer.Screen  component={Profile} name="Profile" 
+            options={{
+                drawerLabel: 'Profile',
+                headerShown: true,
+                drawerIcon: () => (
+                    <Ionicons name="person" size={24} color={"purple"}/>
+                ),
+            }}
+             />
+            <Drawer.Screen  component={Register} name="Register"
+            options={{
+                drawerLabel: 'Register',
+                headerShown: true,
+                drawerIcon: () => (
+                    <Ionicons name="person-add" size={24} color={"purple"}/>
+                ),
+            }}
+              />
+            <Drawer.Screen  component={Login} name="Login"
+            options={{
+                drawerLabel: 'Login',
+                headerShown: true,
+                drawerIcon: () => (
+                    <Ionicons name="log-in" size={24} color={"purple"}/>
+                ),
+
+            }}  
+            />
         </Drawer.Navigator>
     )
 }
