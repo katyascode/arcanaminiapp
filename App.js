@@ -16,7 +16,7 @@ import Register from "./screens/Register"
 import Profile from './screens/Profile';
 function BottomTabNavigator(){
     return (
-        <BottomTab.Navigator initialRouteName='lol' >
+        <BottomTab.Navigator initialRouteName='Home'>
         <BottomTab.Screen name="Home" component={Home} options={
             {
                 title: "Home",
