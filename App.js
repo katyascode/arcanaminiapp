@@ -52,10 +52,10 @@ function DrawerNavigation(){
     return(
         <Drawer.Navigator>
             <Drawer.Screen  component={BottomTabNavigator} name="Drawer" options={{
-                drawerLabel: 'Home',
+                drawerLabel: 'Menu',
                 headerShown: false,
                 drawerIcon: () => (
-                    <Ionicons name="home" size={24} color={"purple"}/>
+                    <Ionicons name="menu" size={24} color={"purple"}/>
                 ),
             }}/>
             <Drawer.Screen  component={Profile} name="Profile" 
