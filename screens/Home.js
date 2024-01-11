@@ -1,7 +1,5 @@
 import { View, Text, Button } from 'react-native';
 import { Link, useRouter } from 'expo-router';
-import React from 'react-native';
-import About from './pages/About';
 
 const Home = () => {
 
