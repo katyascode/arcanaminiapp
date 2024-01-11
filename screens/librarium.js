@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, ScrollView, Image } from 'react-native';
 
 // temporary array to show result of mapping, later will use the data retrieved from card database
+// Can use card objects with parameters such as name, description, image, etc..? -KK
 const testArray = [1, 2, 3, 4, 5, 6];
 
 const Librarium = () => {
