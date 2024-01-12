@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import { NavigationContainer } from "@react-navigation/native"
 import { createDrawerNavigator } from "@react-navigation/drawer"
 import Calendar from "./screens/Calendar"
@@ -14,15 +16,34 @@ const Stack = createNativeStackNavigator();
 import Login from "./screens/Login"
 import Register from "./screens/Register"
 import Profile from './screens/Profile';
+
+import { useFonts } from "expo-font";
+import { Nunito_400Regular } from "@expo-google-fonts/nunito";
+import { GermaniaOne_400Regular } from '@expo-google-fonts/germania-one'
+
 function BottomTabNavigator(){
     return (
-        <BottomTab.Navigator initialRouteName='Home'>
+        <BottomTab.Navigator initialRouteName='Home' screenOptions={{
+            tabBarActiveTintColor: "purple",
+            tabBarInactiveTintColor:"gray",
+            
+        }}>
+        <BottomTab.Screen name="Librarium" component={Librarium} options={
+            {
+                title: "Librarium",
+                headerTitleAlign: "center",
+                
+                tabBarIcon: ({ color, focused }) => (
+                    <Ionicons name={focused ? "book" : "book-outline"} size={24} color={color}/>
+                ),
+            }
+        }/>
         <BottomTab.Screen name="Home" component={Home} options={
             {
                 title: "Home",
                 headerTitleAlign: "center",
-                tabBarIcon: () => (
-                    <Ionicons name="home" size={24} color={"purple"}/>
+                tabBarIcon: ({ color, focused }) => (
+                    <Ionicons name={focused ? "home" : "home-outline"} size={24} color={color} />
                 ),
             }
         }/>
@@ -30,17 +51,8 @@ function BottomTabNavigator(){
             {
                 title: "Calendar",
                 headerTitleAlign: "center",
-                tabBarIcon: () => (
-                    <Ionicons name="calendar" size={24} color={"purple"}/>
-                ),
-            }
-        }/>
-        <BottomTab.Screen name="Librarium" component={Librarium} options={
-            {
-                title: "Librarium",
-                headerTitleAlign: "center",
-                tabBarIcon: () => (
-                    <Ionicons name="book" size={24} color={"purple"}/>
+                tabBarIcon: ({ color, focused }) => (
+                    <MaterialCommunityIcons name={focused ? "calendar-month" : "calendar-month-outline"} size={24} color={color}/>
                 ),
             }
         }/>
@@ -91,7 +103,6 @@ function DrawerNavigation(){
 }
 
 export default function App() {
-    
     return (<>
         <StatusBar style='dark'/>
         <NavigationContainer>
@@ -107,5 +118,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
