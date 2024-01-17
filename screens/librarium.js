@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginLeft: '2%',
         width: '45%',
-        borderRadius: '15%',
+        // borderRadius: '15%',
         alignItems: 'center',
         padding: '1%'
     },
