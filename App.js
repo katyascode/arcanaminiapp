@@ -26,19 +26,23 @@ const themeColor = "rgba(122, 134, 237, 1)"
 
 function BottomTabNavigator() {
     return (
-        <BottomTab.Navigator initialRouteName='Home' screenOptions={{
-            tabBarActiveTintColor: themeColor,
-            tabBarInactiveTintColor: "gray",
-            tabBarStyle: {
-                height: 96,
-            },
-
-        }}>
+        <BottomTab.Navigator 
+            initialRouteName='Home' 
+            screenOptions={{
+                tabBarActiveTintColor: themeColor,
+                tabBarInactiveTintColor: "gray",
+                tabBarStyle: {
+                    height: 96,
+                },
+                headerTitleAlign: "left",
+                headerStyle: {
+                    height: 156,
+                },
+            }}
+        >
             <BottomTab.Screen name="Librarium" component={Librarium} options={
                 {
                     title: "Librarium",
-                    headerTitleAlign: "center",
-
                     tabBarIcon: ({ color, focused }) => (
                         <Ionicons name={focused ? "book" : "book-outline"} size={24} color={color} />
                     ),
@@ -60,7 +64,6 @@ function BottomTabNavigator() {
             <BottomTab.Screen name="Calendar" component={Calendar} options={
                 {
                     title: "Calendar",
-                    headerTitleAlign: "center",
                     tabBarIcon: ({ color, focused }) => (
                         <MaterialCommunityIcons name={focused ? "calendar-month" : "calendar-month-outline"} size={24} color={color} />
                     ),
