@@ -51,11 +51,6 @@ function BottomTabNavigator() {
             <BottomTab.Screen name="Home" component={Home} options={
                 {
                     title: "Home",
-                    headerTitleAlign: "left",
-                    headerStyle: {
-                        height: 156,
-                    },
-
                     tabBarIcon: ({ color, focused }) => (
                         <Ionicons name={focused ? "home" : "home-outline"} size={24} color={color} />
                     ),
