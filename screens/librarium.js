@@ -2,6 +2,8 @@ import { StyleSheet, View, Text, ScrollView, Image, Pressable, Alert} from 'reac
 import { NavigationContainer } from '@react-navigation/native';
 
 import LibrariumSearchBar from '../components/librariumComponents/LibrariumSearchBar';
+import LibrariumSubpageButton from '../components/librariumComponents/LibrariumSubpageButton';
+
 
 // import { openDatabase } from 'react-native-sqlite-storage';
 //open database
@@ -33,15 +35,20 @@ const Librarium = ({navigation}) => {
             {/*search bar. insert the components*/}
             <LibrariumSearchBar />
 
+            <Text>Meet the Cards</Text>
+            <LibrariumSubpageButton pageTitle="Minor Arcana" />
+            <LibrariumSubpageButton pageTitle="Major Arcana" />
+
+            <Text>How to...</Text>
+            <LibrariumSubpageButton pageTitle="Methodology" />
+            <LibrariumSubpageButton pageTitle="Spreads" />
+
 
             <View style={styles.container} >
                 <Pressable style={styles.card} onPress={() => navigation.navigate('MinorArcana')}>
                     <Text>Minor Arcana</Text>
                 </Pressable>
             </View>
-
-            
-
 
         </ScrollView>
     )
