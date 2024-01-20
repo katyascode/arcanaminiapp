@@ -44,18 +44,18 @@ const styles = StyleSheet.create({
     },
     searchWrapper: {
         flex: 1,
-        //backgroundColor: COLORS.white,
-        //marginRight: SIZES.small,
+        backgroundColor: "#f2f2f1",
+        margin: "6px",
         justifyContent: "center",
         alignItems: "center",
-        //borderRadius: SIZES.medium,
+        borderRadius: "20px",
         height: "100%",
     },
     searchInput: {
-        //fontFamily: FONT.regular,
+        //fontFamily:,
         width: "100%",
         height: "100%",
-        //paddingHorizontal: SIZES.medium,
+        //paddingHorizontal: ,
     },
     searchButton: {
         width: 50,
@@ -67,9 +67,9 @@ const styles = StyleSheet.create({
     },
     searchButtonImage: {
         searchBtnImage: {
-            width: "50%",
-            height: "50%",
-            //tintColor: COLORS.white,
+            width: 28,
+            height: 28,
+            //flex: ,
           },
     },
 })
