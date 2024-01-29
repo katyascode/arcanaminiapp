@@ -44,12 +44,6 @@ const Librarium = ({navigation}) => {
             <LibrariumSubpageButton pageTitle="Spreads" />
 
 
-            <View style={styles.container} >
-                <Pressable style={styles.card} onPress={() => navigation.navigate('MinorArcana')}>
-                    <Text>Minor Arcana</Text>
-                </Pressable>
-            </View>
-
         </ScrollView>
     )
 }
