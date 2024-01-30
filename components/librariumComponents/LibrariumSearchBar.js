@@ -12,18 +12,23 @@ import { Ionicons } from '@expo/vector-icons';
 const LibrariumSearchBar = () => {
   return (
     <View style={styles.searchContainer}>
-      <View style={styles.searchWrapper}>
-        <TextInput
-            style={styles.searchInput}
-            value=""
-            //onChange={() = {}} // handle to search
-            placeholder="Search for something specific" // maybe can change look @ other pages later
-        />
-      </View>
-
+      
+    <View style={styles.searchBar}>
       <TouchableOpacity>
-        <Ionicons name="search-sharp" size={28}></Ionicons>
+          <Ionicons name="search-sharp" size={30}></Ionicons>
       </TouchableOpacity>
+
+        <View style={styles.searchWrapper}>
+          <TextInput
+              style={styles.searchInput}
+              value=""
+              //onChange={() = {}} // handle to search
+              placeholder="Search for something specific" // maybe can change look @ other pages later
+          />
+        </View>
+    </View>
+
+
     
     </View>
   )
@@ -36,15 +41,23 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
-        //marginTop: SIZES.large,
+        padding: "20px",
         height: 50,
+    },
+    searchBar: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#ffffff', // Background color of the search bar
+      borderRadius: 5, // Adjust as needed
+      padding: 5, // Adjust as needed
     },
     searchWrapper: {
         flex: 1,
+        flexDirection: "row",
         backgroundColor: "#f2f2f1",
-        margin: "6px",
+        //margin: "6px",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "right",
         borderRadius: "20px",
         height: "100%",
     },
@@ -57,6 +70,7 @@ const styles = StyleSheet.create({
     searchButton: {
         width: 50,
         height: "100%",
+        flexDirection: "row",
         //backgroundColor: ,
         //borderRadius: ,
         justifyContent: "center",
