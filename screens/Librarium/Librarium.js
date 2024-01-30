@@ -1,8 +1,8 @@
 import { StyleSheet, View, Text, ScrollView, Image, Pressable, Alert} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
-import LibrariumSearchBar from '../components/librariumComponents/LibrariumSearchBar';
-import LibrariumSubpageButton from '../components/librariumComponents/LibrariumSubpageButton';
+import LibrariumSearchBar from '../../components/librariumComponents/LibrariumSearchBar';
+import LibrariumSubpageButton from '../../components/librariumComponents/LibrariumSubpageButton';
 
 
 // import { openDatabase } from 'react-native-sqlite-storage';

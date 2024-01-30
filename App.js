@@ -9,7 +9,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer"
 import Calendar from "./screens/Calendar"
 import Home from './screens/Home';
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import Librarium from './screens/Librarium';
+import Librarium from './screens/Librarium/Librarium';
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
