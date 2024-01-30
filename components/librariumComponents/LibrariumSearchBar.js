@@ -7,7 +7,7 @@ import {
     Image, 
     StyleSheet 
 } from 'react-native';
-import searchButtonIcon from './searchbuttonicon.png';
+import { Ionicons } from '@expo/vector-icons';
 
 const LibrariumSearchBar = () => {
   return (
@@ -20,12 +20,9 @@ const LibrariumSearchBar = () => {
             placeholder="Search for something specific" // maybe can change look @ other pages later
         />
       </View>
-      <TouchableOpacity style={styles.searchButton} /*onPress={() = {}}*/> 
-        <Image 
-            source={searchButtonIcon}
-            resizeMode="contain"
-            style={styles.searchButtonImage}
-        />
+
+      <TouchableOpacity>
+        <Ionicons name="search-sharp" size={28}></Ionicons>
       </TouchableOpacity>
     
     </View>
