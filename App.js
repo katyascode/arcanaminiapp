@@ -24,7 +24,7 @@ import { GermaniaOne_400Regular } from '@expo-google-fonts/germania-one'
 function BottomTabNavigator(){
     return (
         <BottomTab.Navigator initialRouteName='Home' screenOptions={{
-            tabBarActiveTintColor: "purple",
+            tabBarActiveTintColor: "#7A86ED", // solidpurple shade from Figma
             tabBarInactiveTintColor:"gray",
             
         }}>
@@ -67,7 +67,7 @@ function DrawerNavigation(){
                 drawerLabel: 'Menu',
                 headerShown: false,
                 drawerIcon: () => (
-                    <Ionicons name="menu" size={24} color={"purple"}/>
+                    <Ionicons name="menu" size={24} color={"#7A86ED"}/>
                 ),
             }}/>
             <Drawer.Screen  component={Profile} name="Profile" 
@@ -75,7 +75,7 @@ function DrawerNavigation(){
                 drawerLabel: 'Profile',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="person" size={24} color={"purple"}/>
+                    <Ionicons name="person" size={24} color={"#7A86ED"}/>
                 ),
             }}
              />
@@ -84,7 +84,7 @@ function DrawerNavigation(){
                 drawerLabel: 'Register',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="person-add" size={24} color={"purple"}/>
+                    <Ionicons name="person-add" size={24} color={"#7A86ED"}/>
                 ),
             }}
               />
@@ -93,7 +93,7 @@ function DrawerNavigation(){
                 drawerLabel: 'Login',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="log-in" size={24} color={"purple"}/>
+                    <Ionicons name="log-in" size={24} color={"#7A86ED"}/>
                 ),
 
             }}  
