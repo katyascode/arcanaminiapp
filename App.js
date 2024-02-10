@@ -8,8 +8,8 @@ import { NavigationContainer } from "@react-navigation/native"
 import { createDrawerNavigator } from "@react-navigation/drawer"
 import Calendar from "./screens/Calendar"
 import Home from './screens/Home';
-import {createNativeStackNavigator} from "@react-navigation/native-stack"
-import Librarium from './screens/Librarium';
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import Librarium from './screens/Librarium/Librarium';
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -21,10 +21,13 @@ import { useFonts } from "expo-font";
 import { Nunito_400Regular } from "@expo-google-fonts/nunito";
 import { GermaniaOne_400Regular } from '@expo-google-fonts/germania-one'
 
-function BottomTabNavigator(){
+// default purple theme colour, will add functionality to switch theme colour later
+const themeColor = "rgba(122, 134, 237, 1)"
+
+function BottomTabNavigator() {
     return (
         <BottomTab.Navigator initialRouteName='Home' screenOptions={{
-            tabBarActiveTintColor: "#7A86ED", // solidpurple shade from Figma
+            tabBarActiveTintColor: "purple",
             tabBarInactiveTintColor:"gray",
             
         }}>
@@ -60,14 +63,14 @@ function BottomTabNavigator(){
     )
 
 }
-function DrawerNavigation(){
-    return(
+function DrawerNavigation() {
+    return (
         <Drawer.Navigator>
-            <Drawer.Screen  component={BottomTabNavigator} name="Drawer" options={{
+            <Drawer.Screen component={BottomTabNavigator} name="Drawer" options={{
                 drawerLabel: 'Menu',
                 headerShown: false,
                 drawerIcon: () => (
-                    <Ionicons name="menu" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="menu" size={24} color={"purple"}/>
                 ),
             }}/>
             <Drawer.Screen  component={Profile} name="Profile" 
@@ -75,7 +78,7 @@ function DrawerNavigation(){
                 drawerLabel: 'Profile',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="person" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="person" size={24} color={"purple"}/>
                 ),
             }}
              />
@@ -84,7 +87,7 @@ function DrawerNavigation(){
                 drawerLabel: 'Register',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="person-add" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="person-add" size={24} color={"purple"}/>
                 ),
             }}
               />
@@ -93,10 +96,10 @@ function DrawerNavigation(){
                 drawerLabel: 'Login',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="log-in" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="log-in" size={24} color={"purple"}/>
                 ),
 
-            }}  
+                }}
             />
         </Drawer.Navigator>
     )
@@ -104,19 +107,19 @@ function DrawerNavigation(){
 
 export default function App() {
     return (<>
-        <StatusBar style='dark'/>
+        <StatusBar style='dark' />
         <NavigationContainer>
-            <DrawerNavigation/>
+            <DrawerNavigation />
         </NavigationContainer>
-        </>
+    </>
     );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
