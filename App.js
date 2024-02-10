@@ -20,6 +20,9 @@ import Profile from './screens/Profile';
 import { useFonts } from "expo-font";
 import { Nunito_400Regular } from "@expo-google-fonts/nunito";
 import { GermaniaOne_400Regular } from '@expo-google-fonts/germania-one'
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { FIREBASE_AUTH } from './FirebaseConfig';
 
 function BottomTabNavigator(){
     return (
@@ -103,6 +106,14 @@ function DrawerNavigation(){
 }
 
 export default function App() {
+    const [user, setUser] = useState(null);
+    useEffect(()=>{
+        onAuthStateChanged(FIREBASE_AUTH, (user)=>{
+            console.log(user);
+            setUser(user);
+        })
+       
+    })
     return (<>
         <StatusBar style='dark'/>
         <NavigationContainer>

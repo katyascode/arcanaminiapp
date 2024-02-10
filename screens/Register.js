@@ -12,10 +12,7 @@ function Register({navigation}){
     const register = async()=>{
         setLoading(true);
         try{
-            console.log(email);
-            console.log(password);
-            const response = await createUserWithEmailAndPassword(auth,email, password);
-            console.log(response)
+            const response = await createUserWithEmailAndPassword(auth,email, password);  
         }catch(error){
             console.log(error);
         }
