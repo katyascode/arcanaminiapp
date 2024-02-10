@@ -1,61 +1,47 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'
-import { createDrawerNavigator } from "@react-navigation/drawer"
-const Drawer = createDrawerNavigator();
-import Login from '../screens/Login';
-import Register from "../screens/Register"
-import Profile from '../screens/Profile';
-import BottomTabNavigator from './DrawerNavigation';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Calendar from "../screens/Calendar"
+import Home from '../screens/Home';
+import Librarium from '../screens/Librarium';
+const BottomTab = createBottomTabNavigator();
 
-export default function DrawerNavigation({user}){
-    return(
-        <Drawer.Navigator>
-            <Drawer.Screen  component={BottomTabNavigator} name="Drawer" options={{
-                drawerLabel: 'Menu',
-                headerShown: false,
-                drawerIcon: () => (
-                    <Ionicons name="menu" size={24} color={"#7A86ED"}/>
+export default function BottomTabNavigator(){
+    return (
+        <BottomTab.Navigator initialRouteName='Home' screenOptions={{
+            tabBarActiveTintColor: "#7A86ED", // solidpurple shade from Figma
+            tabBarInactiveTintColor:"gray",
+            
+        }}>
+        <BottomTab.Screen name="Librarium" component={Librarium} options={
+            {
+                title: "Librarium",
+                headerTitleAlign: "center",
+                
+                tabBarIcon: ({ color, focused }) => (
+                    <Ionicons name={focused ? "book" : "book-outline"} size={24} color={color}/>
                 ),
-            }}/>
-            <Drawer.Screen  component={Profile} name="Profile" 
-            options={{
-                drawerLabel: 'Profile',
-                headerShown: true,
-                drawerIcon: () => (
-                    <Ionicons name="person" size={24} color={"#7A86ED"}/>
+            }
+        }/>
+        <BottomTab.Screen name="Home" component={Home} options={
+            {
+                title: "Home",
+                headerTitleAlign: "center",
+                tabBarIcon: ({ color, focused }) => (
+                    <Ionicons name={focused ? "home" : "home-outline"} size={24} color={color} />
                 ),
-            }}
-             />
-             {
-                user ? ( <>
-                <Drawer.Screen  component={Register} name="Register"
-                options={{
-                    drawerLabel: 'Register',
-                    headerShown: true,
-                    drawerIcon: () => (
-                        <Ionicons name="person-add" size={24} color={"#7A86ED"}/>
-                    ),
-                }}
-                  />
-                <Drawer.Screen  component={Login} name="Login"
-                options={{
-                    drawerLabel: 'Login',
-                    headerShown: true,
-                    drawerIcon: () => (
-                        <Ionicons name="log-in" size={24} color={"#7A86ED"}/>
-                    ),
-    
-                }}  
-                /></>): <Drawer.Screen  component={Login} name="Logout"
-                options={{
-                    drawerLabel: 'Login',
-                    headerShown: true,
-                    drawerIcon: () => (
-                        <Ionicons name="log-out-outline" size={24} color={"#7A86ED"}/>
-                    ),
-                }}  
-                />
-             }
-           
-        </Drawer.Navigator>
+            }
+        }/>
+        <BottomTab.Screen name="Calendar" component={Calendar} options={
+            {
+                title: "Calendar",
+                headerTitleAlign: "center",
+                tabBarIcon: ({ color, focused }) => (
+                    <MaterialCommunityIcons name={focused ? "calendar-month" : "calendar-month-outline"} size={24} color={color}/>
+                ),
+            }
+        }/>
+</BottomTab.Navigator>
     )
+
 }

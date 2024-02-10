@@ -21,7 +21,7 @@ import { GermaniaOne_400Regular } from '@expo-google-fonts/germania-one'
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH } from './FirebaseConfig';
-import DrawerNavigation from './navigators/BottomTabNavigator';
+import DrawerNavigation from './navigators/DrawerNavigator';
 
 export default function App() {
     const [user, setUser] = useState(null);
