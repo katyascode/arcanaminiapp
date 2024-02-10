@@ -1,22 +1,13 @@
-import { StyleSheet, View, Text, ScrollView, Image, Pressable, Alert} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-
-// import { openDatabase } from 'react-native-sqlite-storage';
-//open database
-// openDatabase({ name: 'librariumdatabase.db', createFromLocation : 1})
-
-
+import { StyleSheet, View, Text, ScrollView, Image } from 'react-native';
 
 // temporary array to show result of mapping, later will use the data retrieved from card database
 // Can use card objects with parameters such as name, description, image, etc..? -KK
-const testArray = [1, 2, 3, 4];
+const testArray = [1, 2, 3, 4, 5, 6];
 
-const Librarium = ({navigation}) => {
-    
+const Librarium = () => {
     return (
         <ScrollView>
-            
-            {/* <View style={styles.container}>
+            <View style={styles.container}>
                 {testArray.map((card) => {
                     return (
                         <View style={styles.card}>
@@ -25,17 +16,7 @@ const Librarium = ({navigation}) => {
                         </View>
                     )
                 })}
-            </View> */}
-
-            <View style={styles.container} >
-                <Pressable style={styles.card} onPress={() => navigation.navigate('MinorArcana')}>
-                    <Text>Minor Arcana</Text>
-                </Pressable>
             </View>
-
-            
-
-
         </ScrollView>
     )
 }
