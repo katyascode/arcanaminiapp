@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Calendar from "../screens/Calendar"
 import Home from '../screens/Home';
-import Librarium from '../screens/Librarium';
+import Librarium from '../screens/Librarium/Librarium.js';
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
@@ -11,7 +11,7 @@ export default function BottomTabNavigator() {
         <BottomTab.Navigator 
             initialRouteName='Home' 
             screenOptions={{
-                tabBarActiveTintColor: themeColor,
+                tabBarActiveTintColor: "purple",
                 tabBarInactiveTintColor: "gray",
                 tabBarStyle: {
                     height: 96,

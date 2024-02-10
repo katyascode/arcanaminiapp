@@ -65,7 +65,8 @@ function BottomTabNavigator() {
     )
 
 }
-function DrawerNavigation() {
+
+/*function DrawerNavigation() {
     return (
         <Drawer.Navigator>
             <Drawer.Screen component={BottomTabNavigator} name="Drawer" options={{
@@ -105,7 +106,7 @@ function DrawerNavigation() {
             />
         </Drawer.Navigator>
     )
-}
+}*/
 
 export default function App() {
     const [user, setUser] = useState(null);
