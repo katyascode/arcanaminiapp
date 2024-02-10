@@ -9,7 +9,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer"
 import Calendar from "./screens/Calendar"
 import Home from './screens/Home';
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import Librarium from './screens/Librarium';
+import Librarium from './screens/Librarium/Librarium';
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -26,6 +26,7 @@ const themeColor = "rgba(122, 134, 237, 1)"
 
 function BottomTabNavigator() {
     return (
+ LibrariumButtons
         <BottomTab.Navigator 
             initialRouteName='Home' 
             screenOptions={{
@@ -75,33 +76,33 @@ function DrawerNavigation() {
                 drawerLabel: 'Menu',
                 headerShown: false,
                 drawerIcon: () => (
-                    <Ionicons name="menu" size={24} color={"purple"} />
+                    <Ionicons name="menu" size={24} color={"#7A86ED"}/>
                 ),
-            }} />
-            <Drawer.Screen component={Profile} name="Profile"
-                options={{
-                    drawerLabel: 'Profile',
-                    headerShown: true,
-                    drawerIcon: () => (
-                        <Ionicons name="person" size={24} color={"purple"} />
-                    ),
-                }}
-            />
-            <Drawer.Screen component={Register} name="Register"
-                options={{
-                    drawerLabel: 'Register',
-                    headerShown: true,
-                    drawerIcon: () => (
-                        <Ionicons name="person-add" size={24} color={"purple"} />
-                    ),
-                }}
-            />
-            <Drawer.Screen component={Login} name="Login"
-                options={{
-                    drawerLabel: 'Login',
-                    headerShown: true,
-                    drawerIcon: () => (
-                        <Ionicons name="log-in" size={24} color={"purple"} />
+            }}/>
+            <Drawer.Screen  component={Profile} name="Profile" 
+            options={{
+                drawerLabel: 'Profile',
+                headerShown: true,
+                drawerIcon: () => (
+                    <Ionicons name="person" size={24} color={"#7A86ED"}/>
+                ),
+            }}
+             />
+            <Drawer.Screen  component={Register} name="Register"
+            options={{
+                drawerLabel: 'Register',
+                headerShown: true,
+                drawerIcon: () => (
+                    <Ionicons name="person-add" size={24} color={"#7A86ED"}/>
+                ),
+            }}
+              />
+            <Drawer.Screen  component={Login} name="Login"
+            options={{
+                drawerLabel: 'Login',
+                headerShown: true,
+                drawerIcon: () => (
+                    <Ionicons name="log-in" size={24} color={"#7A86ED"}/>
                     ),
 
                 }}
