@@ -6,6 +6,8 @@ import Home from '../screens/Home';
 import Librarium from '../screens/Librarium/Librarium.js';
 const BottomTab = createBottomTabNavigator();
 
+const themeColor = "rgba(122, 134, 237, 1)"
+
 export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator 
@@ -13,20 +15,15 @@ export default function BottomTabNavigator() {
             screenOptions={{
                 tabBarActiveTintColor: "purple",
                 tabBarInactiveTintColor: "gray",
-                tabBarStyle: {
-                    height: 96,
-                },
-                headerTitleAlign: "left",
-                headerStyle: {
-                    height: 156,
-                },
+                headerTitleAlign: "center",
+                
             }}
         >
             <BottomTab.Screen name="Librarium" component={Librarium} options={
                 {
                     title: "Librarium",
                     tabBarIcon: ({ color, focused }) => (
-                        <Ionicons name={focused ? "book" : "book-outline"} size={24} color={color} />
+                        <Ionicons name={focused ? "book" : "book-outline"} size={24} color={themeColor} />
                     ),
                 }
             } />
@@ -34,7 +31,7 @@ export default function BottomTabNavigator() {
                 {
                     title: "Home",
                     tabBarIcon: ({ color, focused }) => (
-                        <Ionicons name={focused ? "home" : "home-outline"} size={24} color={color} />
+                        <Ionicons name={focused ? "home" : "home-outline"} size={24} color={themeColor} />
                     ),
                 }
             } />
@@ -42,7 +39,7 @@ export default function BottomTabNavigator() {
                 {
                     title: "Calendar",
                     tabBarIcon: ({ color, focused }) => (
-                        <MaterialCommunityIcons name={focused ? "calendar-month" : "calendar-month-outline"} size={24} color={color} />
+                        <MaterialCommunityIcons name={focused ? "calendar-month" : "calendar-month-outline"} size={24} color={themeColor} />
                     ),
                 }
             } />

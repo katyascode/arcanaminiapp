@@ -6,6 +6,8 @@ import Register from "../screens/Register"
 import Profile from '../screens/Profile';
 import BottomTabNavigator from './BottomTabNavigator';
 
+const themeColor = "rgba(122, 134, 237, 1)"
+
 export default function DrawerNavigation() {
     return (
         <Drawer.Navigator>
@@ -13,7 +15,7 @@ export default function DrawerNavigation() {
                 drawerLabel: 'Menu',
                 headerShown: false,
                 drawerIcon: () => (
-                    <Ionicons name="menu" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="menu" size={24} color={themeColor}/>
                 ),
             }}/>
             <Drawer.Screen  component={Profile} name="Profile" 
@@ -21,7 +23,7 @@ export default function DrawerNavigation() {
                 drawerLabel: 'Profile',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="person" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="person" size={24} color={themeColor}/>
                 ),
             }}
              />
@@ -30,7 +32,7 @@ export default function DrawerNavigation() {
                 drawerLabel: 'Register',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="person-add" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="person-add" size={24} color={themeColor}/>
                 ),
             }}
               />
@@ -39,7 +41,7 @@ export default function DrawerNavigation() {
                 drawerLabel: 'Login',
                 headerShown: true,
                 drawerIcon: () => (
-                    <Ionicons name="log-in" size={24} color={"#7A86ED"}/>
+                    <Ionicons name="log-in" size={24} color={themeColor}/>
                     ),
 
                 }}
