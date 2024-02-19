@@ -16,18 +16,27 @@ import Login from "./screens/Login"
 import Register from "./screens/Register"
 import Profile from './screens/Profile';
 import { useFonts } from "expo-font";
-import { Nunito_400Regular } from "@expo-google-fonts/nunito";
-import { GermaniaOne_400Regular } from '@expo-google-fonts/germania-one'
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH } from './FirebaseConfig';
 import DrawerNavigation from './navigators/DrawerNavigator';
-import { useFonts } from "expo-font";
 
 // default purple theme colour, will add functionality to switch theme colour later
 const themeColor = "rgba(122, 134, 237, 1)"
 
 export default function App() {
+    //Loading fonts - Jasper
+    const [fontsLoaded, error] = useFonts({
+        "Nunito-Regular": require("./assets/fonts/Nunito-Regular.ttf"),
+        "Nunito-SemiBold": require("./assets/fonts/Nunito-SemiBold.ttf"),
+        "AoboshiOne-Regular": require("./assets/fonts/AoboshiOne-Regular.ttf"),
+        "GermaniaOne-Regular": require("./assets/fonts/GermaniaOne-Regular.ttf"),
+      });
+    
+      if (!fontsLoaded && !error) {
+        return null;
+      }
+
     const [user, setUser] = useState(null);
     useEffect(()=>{
         onAuthStateChanged(FIREBASE_AUTH, (user)=>{
@@ -45,25 +54,3 @@ export default function App() {
     </>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
-
-//Code for loading fronts -Jasper
-
-// const [fontsLoaded, error] = useFonts({
-//     "Nunito-Regular": require("./assets/fonts/Nunito-Regular.ttf"),
-//     "Nunito-SemiBold": require("./assets/fonts/Nunito-SemiBold.ttf"),
-//     "AoboshiOne-Regular": require("./assets/fonts/AoboshiOne-Regular.ttf"),
-//     "SpaceGrotesk-Medium": require("./assets/fonts/SpaceGrotesk-Medium.ttf"),
-// });
-
-// if (!fontsLoaded && !error) {
-//     return null;
-// }
