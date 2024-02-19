@@ -22,6 +22,7 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH } from './FirebaseConfig';
 import DrawerNavigation from './navigators/DrawerNavigator';
+import { useFonts } from "expo-font";
 
 // default purple theme colour, will add functionality to switch theme colour later
 const themeColor = "rgba(122, 134, 237, 1)"
@@ -53,3 +54,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
+//Code for loading fronts -Jasper
+
+// const [fontsLoaded, error] = useFonts({
+//     "Nunito-Regular": require("./assets/fonts/Nunito-Regular.ttf"),
+//     "Nunito-SemiBold": require("./assets/fonts/Nunito-SemiBold.ttf"),
+//     "AoboshiOne-Regular": require("./assets/fonts/AoboshiOne-Regular.ttf"),
+//     "SpaceGrotesk-Medium": require("./assets/fonts/SpaceGrotesk-Medium.ttf"),
+// });
+
+// if (!fontsLoaded && !error) {
+//     return null;
+// }
