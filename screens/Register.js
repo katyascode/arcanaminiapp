@@ -28,7 +28,7 @@ function Register({navigation}){
             </View>
             <View style={styles.wrapper}>
                 <Text style={styles.subHeading}>What can we call you?</Text>
-                <TextInput style={styles.input} placeholderTextColor="#524b4a"  value={name} placeholder="Enter your email here" autoCapitalize="none" onChangeText={(text)=>setEmail(text)}></TextInput>
+                <TextInput style={styles.input} placeholderTextColor="#524b4a"  value={name} placeholder="Enter your email here" autoCapitalize="none" onChangeText={(text)=>setName(text)}></TextInput>
             </View>
             <View style={styles.wrapper}>
                 <Text style={styles.subHeading}>Email</Text>
