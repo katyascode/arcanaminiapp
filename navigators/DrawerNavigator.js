@@ -5,6 +5,7 @@ import Login from '../screens/Login';
 import Register from "../screens/Register"
 import Profile from '../screens/Profile';
 import BottomTabNavigator from './BottomTabNavigator';
+import Logout from "../Modal/Logout"
 
 const themeColor = "rgba(122, 134, 237, 1)"
 
@@ -45,6 +46,15 @@ export default function DrawerNavigation() {
                     ),
 
                 }}
+            />
+            <Drawer.Screen component={Logout} name="Log Out"
+            options={{
+                drawerLabel: 'Signout',
+                headerShown: true,
+                drawerIcon: () => (
+                    <Ionicons name="log-out" size={24} color={themeColor}/>
+                ),
+            }}
             />
         </Drawer.Navigator>
     )
