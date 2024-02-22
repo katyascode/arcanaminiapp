@@ -28,15 +28,15 @@ function Register({navigation}){
             </View>
             <View style={styles.wrapper}>
                 <Text style={styles.subHeading}>What can we call you?</Text>
-                <TextInput style={styles.input} placeholderTextColor="#524b4a"  value={name} placeholder="Enter your email here" autoCapitalize="none" onChangeText={(text)=>setName(text)}></TextInput>
+                <TextInput style={styles.input} placeholderTextColor="#8c8888"  value={name} placeholder="Enter your name here" autoCapitalize="none" onChangeText={(text)=>setName(text)}></TextInput>
             </View>
             <View style={styles.wrapper}>
                 <Text style={styles.subHeading}>Email</Text>
-                <TextInput style={styles.input} placeholderTextColor="#524b4a"  value={email} placeholder="Enter your email here" autoCapitalize="none" onChangeText={(text)=>setEmail(text)}></TextInput>
+                <TextInput style={styles.input} placeholderTextColor="#8c8888"  value={email} placeholder="Enter your email here" autoCapitalize="none" onChangeText={(text)=>setEmail(text)}></TextInput>
             </View>
             <View style={styles.wrapper}>
                 <Text style={styles.subHeading}>Password must be 6-12 characters long</Text>
-                <TextInput style={styles.input}  placeholderTextColor="#524b4a" secureTextEntry={true} value={password} placeholder="XXX" autoCapitalize="none" onChangeText={(text)=>setPassword(text)}></TextInput>
+                <TextInput style={styles.input}  placeholderTextColor="#8c8888" secureTextEntry={true} value={password} placeholder="XXX" autoCapitalize="none" onChangeText={(text)=>setPassword(text)}></TextInput>
             </View>
             {loading ? (<ActivityIndicator size="large" color="#0000ff" />) : (<View style={styles.buttonContainer}>
             <Button title="Signup" onPress={register}/>
@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
         paddingLeft: 26,
         margin:0,
         fontSize:"17px",
-        
         backgroundColor: '#fff'
     },
     headingView:{
