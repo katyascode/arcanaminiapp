@@ -22,26 +22,23 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH } from './FirebaseConfig';
 import DrawerNavigation from './navigators/DrawerNavigator';
+import { store } from './store/store';
+import { Provider } from 'react-redux';
+import { login } from './store/authSlice';
 
 // default purple theme colour, will add functionality to switch theme colour later
 const themeColor = "rgba(122, 134, 237, 1)"
 
 export default function App() {
-    const [user, setUser] = useState(null);
-    useEffect(()=>{
-        onAuthStateChanged(FIREBASE_AUTH, (user)=>{
-            console.log(user);
-            setUser(user);
-        })
-       
-    })
-    return (<>
+    
+    return (
+        <Provider store={store}>
         <StatusBar style='dark' />
         <NavigationContainer>
-            <DrawerNavigation  user={user}/>
-
+            <DrawerNavigation/>
         </NavigationContainer>
-    </>
+        </Provider>
+   
     );
 }
 
